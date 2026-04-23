@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
 for number in range(0, 99):
-    print("{} = {:X}".format(i, i))
+    print("{} = {:X}".format(number, number))
