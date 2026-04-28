@@ -5,4 +5,4 @@ def element_at(my_list, idx):
         return None
     if idx > my_list:
         return None
-    return my_list[idx]
+    return int(my_list[idx])
