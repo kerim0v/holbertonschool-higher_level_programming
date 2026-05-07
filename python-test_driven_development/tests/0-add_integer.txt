@@ -1,18 +1,27 @@
 >>> add_integer = __import__('0-add_integer').add_integer
 
+Usage
+
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
+
 >>> add_integer(1, 2)
-3
+    3
 
 >>> add_integer(4)
-102
+    102
 
 >>> add_integer(1.5, 2.9)
-3
+    3
 
 >>> add_integer("hello", 2)
-Traceback (most recent call last):
-TypeError: a must be an integer
+    Traceback (most recent call last):
+    TypeError: a must be an integer
 
 >>> add_integer(1, None)
-Traceback (most recent call last):
-TypeError: b must be an integer
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+>>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
