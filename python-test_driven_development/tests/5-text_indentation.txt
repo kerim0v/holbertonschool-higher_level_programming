@@ -2,34 +2,40 @@
 
 >>> text_indentation("Hello.")
 Hello.
+<BLANKLINE>
 
 >>> text_indentation("Hi? How are you.")
 Hi?
-
+<BLANKLINE>
 How are you.
+<BLANKLINE>
 
 >>> text_indentation("Good:")
 Good:
+<BLANKLINE>
 
 >>> text_indentation("Hello? How are you: I am fine. Thanks.")
 Hello?
-
+<BLANKLINE>
 How are you:
-
+<BLANKLINE>
 I am fine.
-
+<BLANKLINE>
 Thanks.
+<BLANKLINE>
 
 >>> text_indentation("No special characters here")
 No special characters here
 
 >>> text_indentation("   Hello.")
 Hello.
+<BLANKLINE>
 
 >>> text_indentation("Hello.   World.")
 Hello.
-
+<BLANKLINE>
 World.
+<BLANKLINE>
 
 >>> text_indentation(123)
 Traceback (most recent call last):
