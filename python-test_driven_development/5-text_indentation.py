@@ -15,7 +15,7 @@ def text_indentation(text):
     Raises:
         TypeError: If text is not a string.
     """
- if not isinstance(text, str):
+if not isinstance(text, str):
         raise TypeError("text must be a string")
     i = 0
     while i < len(text) and text[i] == " ":
