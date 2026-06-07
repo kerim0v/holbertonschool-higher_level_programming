@@ -1,53 +1,41 @@
-#!/usr/bin/python3
-"""Test file for MyList class"""
-MyList = __import__('1-my_list').MyList
+# tests/1-my_list.txt
 
-# check instantiation
-ml = MyList()
-print(ml)
+>>> MyList = __import__('1-my_list').MyList
 
-# check inherits from list
-print(isinstance(ml, list))
+# instantiation
+>>> ml = MyList()
+>>> print(ml)
+[]
 
-# check __str__
-ml.append(1)
-print(ml)
+# inherits from list
+>>> isinstance(ml, list)
+True
 
-# check append
-ml.append(4)
-ml.append(2)
-ml.append(3)
-print(ml)
+# append and __str__
+>>> ml.append(1)
+>>> ml.append(4)
+>>> ml.append(2)
+>>> ml.append(3)
+>>> print(ml)
+[1, 4, 2, 3]
 
-# check print_sorted with sorted append
-ml2 = MyList()
-ml2.append(1)
-ml2.append(2)
-ml2.append(3)
-ml2.print_sorted()
+# print_sorted not sorted
+>>> ml.print_sorted()
+[1, 2, 3]
 
-# check print_sorted with not sorted append
-ml3 = MyList()
-ml3.append(3)
-ml3.append(1)
-ml3.append(2)
-ml3.print_sorted()
+# original unchanged
+>>> print(ml)
+[1, 4, 2, 3]
 
-# check print_sorted with negative numbers
-ml4 = MyList()
-ml4.append(-1)
-ml4.append(3)
-ml4.append(-5)
-ml4.print_sorted()
+# negative numbers
+>>> ml2 = MyList()
+>>> ml2.append(-1)
+>>> ml2.append(3)
+>>> ml2.append(-5)
+>>> ml2.print_sorted()
+[-5, -1, 3]
 
-# check print_sorted with empty list
-ml5 = MyList()
-ml5.print_sorted()
-
-# check print_sorted returns a new list (original unchanged)
-ml6 = MyList()
-ml6.append(3)
-ml6.append(1)
-ml6.append(2)
-ml6.print_sorted()
-print(ml6)
+# empty list
+>>> ml3 = MyList()
+>>> ml3.print_sorted()
+[]
