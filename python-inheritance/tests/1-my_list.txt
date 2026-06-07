@@ -1,17 +1,12 @@
-# tests/1-my_list.txt
-
 >>> MyList = __import__('1-my_list').MyList
 
-# instantiation
 >>> ml = MyList()
 >>> print(ml)
 []
 
-# inherits from list
 >>> isinstance(ml, list)
 True
 
-# append and __str__
 >>> ml.append(1)
 >>> ml.append(4)
 >>> ml.append(2)
@@ -19,15 +14,12 @@ True
 >>> print(ml)
 [1, 4, 2, 3]
 
-# print_sorted not sorted
 >>> ml.print_sorted()
-[1, 2, 3]
+[1, 2, 3, 4]
 
-# original unchanged
 >>> print(ml)
 [1, 4, 2, 3]
 
-# negative numbers
 >>> ml2 = MyList()
 >>> ml2.append(-1)
 >>> ml2.append(3)
@@ -35,7 +27,6 @@ True
 >>> ml2.print_sorted()
 [-5, -1, 3]
 
-# empty list
 >>> ml3 = MyList()
 >>> ml3.print_sorted()
 []
