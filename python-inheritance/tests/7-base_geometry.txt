@@ -1,0 +1,60 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+
+# area raises Exception
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+# valid integer
+>>> bg.integer_validator("width", 10)
+
+# zero raises ValueError
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+# negative raises ValueError
+>>> bg.integer_validator("age", -5)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+# string raises TypeError
+>>> bg.integer_validator("name", "10")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+# bool raises TypeError
+>>> bg.integer_validator("check", True)
+Traceback (most recent call last):
+...
+TypeError: check must be an integer
+
+# float raises TypeError
+>>> bg.integer_validator("width", 3.14)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+# None raises TypeError
+>>> bg.integer_validator("width", None)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+# list raises TypeError
+>>> bg.integer_validator("width", [1, 2])
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+# tuple raises TypeError
+>>> bg.integer_validator("width", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
