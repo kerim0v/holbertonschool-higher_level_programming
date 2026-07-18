@@ -4,7 +4,7 @@
 
 def read_file(filename=""):
     """Reads and prints"""
-    
-    with open(filename, r) as f:
+
+    with open(filename, "r") as f:
         content = f.read()
         print(content)
