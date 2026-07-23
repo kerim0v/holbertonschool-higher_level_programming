@@ -16,4 +16,22 @@ def fetch_and_print_posts():
         for post in posts:
             print(post["title"])
 
-fetch_and_print_posts()
+def fetch_and_save_posts():
+    """balright"""
+    response = requests.get(API_URL)
+
+    if response.status_code == 200:
+        posts = response.json()
+        posts_data = [
+            {"id" : post["id"], "title" : post["title"], "body" : post["body"]}
+            for post in posts]
+
+        with open("posts.csv", "w", newline="") as csvfile:
+            fieldnames = ["id", "title", "body"]
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(posts_data)
+
+if __name__ == "__main__":
+    fetch_and_print_posts()
+    fetch_and_save_posts()
