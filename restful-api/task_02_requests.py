@@ -9,7 +9,7 @@ API_URL = "https://jsonplaceholder.typicode.com/posts"
 def fetch_and_print_posts():
     """stated"""
     response = requests.get(API_URL)
-    print("Status code: {}".format(response.status_code))
+    print("Status Code: {}".format(response.status_code))
 
     if response.status_code == 200:
         posts = response.json()
