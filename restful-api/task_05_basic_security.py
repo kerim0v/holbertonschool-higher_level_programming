@@ -2,7 +2,7 @@
 """A Flask API demonstrating Basic Auth, JWT auth, and role-based access control."""
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
-from flask_jwt_extended import (
+from flask_jwt_extended import ( # type: ignore
     JWTManager,
     create_access_token,
     get_jwt_identity,

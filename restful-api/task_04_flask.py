@@ -10,7 +10,7 @@ users = {}
 @app.route("/")
 def home():
     """Root endpoint — simple welcome message."""
-    return "Welcome to the Flask API!"
+    return "Welcome to thpe Flask API!"
  
  
 @app.route("/data")
