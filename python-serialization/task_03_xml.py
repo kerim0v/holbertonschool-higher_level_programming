@@ -6,7 +6,6 @@ Provides functionality to serialize a Python dictionary to an XML
 file, and to deserialize an XML file back into a Python dictionary.
 """
 import xml.etree.ElementTree as ET
-import ast
 
 
 def serialize_to_xml(dictionary, filename):
@@ -28,10 +27,6 @@ def deserialize_from_xml(filename):
 
     dictionary = {}
     for child in root:
-        try:
-            value = ast.literal_eval(child.text)
-        except (ValueError, SyntaxError):
-            value = child.text
-        dictionary[child.tag] = value
+        dictionary[child.tag] = child.text
 
     return dictionary
